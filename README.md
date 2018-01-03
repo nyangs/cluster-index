@@ -1,6 +1,6 @@
 # cluster-index
 
-## Polysemous Code, Product Quantization
+##  Polysemous Code, Product Quantization
 
 
 ***
