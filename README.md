@@ -68,5 +68,11 @@ setup(
 sudo pip install -e .
 ```
 
+7. faiss 정상 동작 테스트
+```python
+import faiss, numpy
+print(faiss.Kmeans(10, 20).train(numpy.random.rand(1000, 10).astype('float32')))
+```
+
 ## Library
 1. [faiss (polysemous code) by facebook](https://github.com/facebookresearch/faiss)
