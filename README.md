@@ -43,7 +43,11 @@ BLASLDFLAGS=-L$(MKLROOT)/lib/intel64 -lmkl_intel_ilp64 -lmkl_core -lmkl_gnu_thre
 BLASLDFLAGSNVCC= $(BLASLDFLAGS) 
 BLASLDFLAGSSONVCC= $(BLASLDFLAGS)
 
+# Build Faiss (GPU)
 ${faiss}/gpu/make -j8
+
+# Build python interface (GPU)
+${faiss}/gpu/make py
 ```
 
 
