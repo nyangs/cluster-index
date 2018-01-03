@@ -5,5 +5,5 @@
 
 ***
 ## Library
-1. (Polysemous Code facebook)[https://github.com/facebookresearch/faiss]
+1. [Polysemous Code (facebook)](https://github.com/facebookresearch/faiss)
 ***
