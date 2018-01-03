@@ -50,6 +50,23 @@ ${faiss}/gpu/make -j8
 ${faiss}/gpu/make py
 ```
 
+6. faiss 시스템 전역 설치 (setup.py 작성)
+```python
+from setuptools import setup, find_packages
+
+setup(
+    name='faiss',
+    version='0.1',
+    include_package_data=True,
+    packages=find_packages(),
+    description='Faiss library',
+)
+```
+
+```bash
+# 설치
+sudo pip install -e .
+```
 
 ## Library
 1. [faiss (polysemous code) by facebook](https://github.com/facebookresearch/faiss)
