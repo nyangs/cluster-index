@@ -32,19 +32,16 @@ ${faiss}/make -j8
 ${faiss}/make py
 ```
 
--. CUDA 설치 (옵션 - GPU 가속 라이브러리)
+5. CUDA 설치 (옵션 - GPU 가속 라이브러리, g++11 and cublas)
 ```bash
-# GPU build (g++11 and cublas)
 # download from developer.nvidia.com/cublas
 # Check compute Capability from developer.nvidia.com/cuda-gpus
 # update makefile.inc gencode 1080-Ti 6.1
 
-# ${faiss}/gpu/Makefile
-# -Wl,--no-as-needed 옵션 제거 (ld unrecognized -Wl)
-# BLASLDFLAGS=-L$(MKLROOT)/lib/intel64 -lmkl_intel_ilp64 \
-#  -lmkl_core -lmkl_gnu_thread -ldl -lpthread
-# BLASLDFLAGSNVCC= $(BLASLDFLAGS)
-# BLASLDFLAGSSONVCC= $(BLASLDFLAGS)
+# ${faiss}/gpu/Makefile  -Wl,--no-as-needed 옵션 제거 (ld unrecognized -Wl)
+BLASLDFLAGS=-L$(MKLROOT)/lib/intel64 -lmkl_intel_ilp64 -lmkl_core -lmkl_gnu_thread -ldl -lpthread
+BLASLDFLAGSNVCC= $(BLASLDFLAGS) 
+BLASLDFLAGSSONVCC= $(BLASLDFLAGS)
 
 ${faiss}/gpu/make -j8
 ```
